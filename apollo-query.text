@@ -1,0 +1,205 @@
+query getAllUsers {
+  users {
+    id
+    username
+    email
+  }
+}
+
+query getUser {
+  user(id: "2jl054tpm44055ml") {
+    username
+    email
+  }
+}
+
+mutation{
+  createUser(data: {
+    username : "Serkan",
+    email: "serkankayaoglu@gmail.com"
+  }) {
+    id
+    username
+    email
+  }
+}
+
+mutation {
+  updateUser(id: "2jl05cftm440p8y1", data: {
+    username : "SerkanKayaoglu",
+    email : "serkankayaoglu@msn.com"
+  }) {
+    id
+    username
+    email
+  }
+}
+
+mutation{
+  deleteUser(id: "2jl05cftm440p8y1") {
+    id
+    username
+    email
+  }
+}
+
+mutation{
+  deleteAllUsers {
+    count
+  }
+}
+
+query getAllEvents{
+  events {
+    id
+    title
+  }
+}
+
+query getEvent{
+  event(id: 1) {
+    id
+    title
+  }
+}
+
+mutation{
+  createEvent(data: {
+    title: "Sample Event",
+    description: "Sample Event Description",
+    date: "2024-11-30",
+    from: "11:00",
+    to: "13:00",
+    location_id: 1,
+    user_id: 1
+  }) {
+    id
+    title
+  }
+}
+
+mutation{
+  updateEvent(id: 1, data: {
+    title: "Sample Event Updated",
+    date: "2024-11-30"
+  }) {
+    id
+    title
+    date
+  }
+}
+
+mutation{
+  deleteEvent(id: 1) {
+    id
+    title
+    date
+  }
+}
+
+mutation{
+  deleteAllEvents {
+    count
+  }
+}
+
+query getAllLecations{
+  locations {
+    id
+    name
+  }
+}
+
+query getLocation{
+  location(id: 1) {
+    id
+    name
+    desc
+    lat
+    lng
+  }
+}
+
+mutation{
+  createLocation(data: {
+    name: "Sample Event",
+    desc: "Sample Event Description",
+    lat: "-16.456",
+    lng: "-14.984"
+  }) {
+    id
+    name
+  }
+}
+
+mutation{
+  updateLocation(id: "2jl05ln7m441gfb2", data: {
+    name: "Sample Event Updated",
+    desc: "Sample Event Description Updated"
+  }) {
+    id
+    name
+  }
+}
+
+mutation{
+  deleteLocation(id: "2jl05ln7m441gfb2") {
+    id
+    name
+  }
+}
+
+mutation{
+  deleteAllLocations {
+    count
+  }
+}
+
+query getAllParticipants{
+  participants {
+    id
+    user_id
+    event_id
+  }
+}
+
+query getParticipants{
+  participant(id: 1) {
+    id
+    user_id
+    event_id
+  }
+}
+
+mutation{
+  createParticipant(data: {
+    user_id:3
+    event_id:3
+  }) {
+    id
+    user_id
+    event_id
+  }
+}
+
+mutation{
+  updateParticipant(id: "2jl0512nhm442x4qg", data: {
+    user_id:5
+  }) {
+    id
+    user_id
+    event_id
+  }
+}
+
+mutation{
+  deleteParticipant(id: "2jl0512nhm442x4qg") {
+    id
+  }
+}
+
+mutation{
+  deleteAllParticipants {
+    count
+  }
+}
